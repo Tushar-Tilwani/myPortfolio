@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tushar Tilwani</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>-->
+</head>
+<body>
+    <div class='body'>
+        <div id='main-tabs'>
+            <div id='tab-container' class='row'>
+                <div id='home' data-scroll-index="0">
+                <a name="n_home" class='a_navLink'></a>
+                    <div id='bg'>
+                    </div>
+                    <img src="css/imgs/appledesk.jpg" id='homebg' />
+                    <div id='name'>
+                        <label>
+                            Tushar Tilwani</label>
+                        <p>
+                            I am a <span>Front-End</span> Engineer</p>
+                    </div>
+                </div>
+                <div id='aboutMe' data-scroll-index="1">
+                    <a name="n_aboutMe" class='a_navLink'></a>about me  
+                </div>
+                <div id='myWorks' data-scroll-index="2">
+                    <a name="n_myWorks" class='a_navLink'></a>my works 
+                </div>
+                <div id='contactMe' data-scroll-index="3">
+                    <a name="n_contactMe" class='a_navLink'></a>contact me
+                </div>
+            </div>
+            <div id='footer' class='row'>
+                <ul id='foot-links'>
+                    <li><a href='javascript:void(0)'>FB</a></li>
+                    <li><a href='javascript:void(0)'>Linkdin</a></li>
+                    <li><a href='javascript:void(0)'>Google Plus</a></li></ul>
+            </div>
+        </div>
+        <div id='nav1'>
+            <nav>
+            <div id='logo'>
+            <img src="css/imgs/tushar.jpg" id='img' />
+            </div>
+            <ul id='nav-links'>
+                <li><a href='#n_home' data-scroll-nav="0">home</a></li>
+                <li><a href='#n_aboutMe' data-scroll-nav="1">aboutme</a></li>
+                <li><a href='#n_myWorks' data-scroll-nav="2">mywork</a></li>
+                <li><a href='#n_contactMe' data-scroll-nav="3">contact</a></li>
+            </ul>
+        </nav>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-2.1.1.js" type="text/javascript"></script>
+<!--<script src="js/scrollIt.min.js" type="text/javascript"></script>-->
+<script src="js/scrollIt.js" type="text/javascript"></script>
+<!--<script src="js/script.js" type="text/javascript"></script>-->
+<!--[if lt IE 9]>-->
+<script type="text/javascript">
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+</script>
+<![endif]-->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $.scrollIt();
+        setHeight();
+        $(window).resize(function () {
+            setHeight();
+        });
+    });
+    function setHeight() {
+
+        //$("#tab-container > div").height($(window).height());
+        if ($(window).width() > 768) {
+            $("#tab-container > div#home").height($(window).height());
+            $.settingsRef({ topOffset: 0 });
+        }
+        else {
+            $("#tab-container > div#home").height($(window).height() - 50);
+            $.settingsRef({ topOffset: -50 });
+        }
+
+    }
+</script>
+</html>
